@@ -1,0 +1,23 @@
+streamlit
+scikit-learn
+import joblib
+pandas as pd
+numpy as np
+langdetect
+deep_translator
+indic_transliteration i
+indic_transliteration
+re
+spacy
+TfidfVectorizer
+LogisticRegression
+RandomForestClassifier
+StackingClassifier
+DecisionTreeClassifier
+NeighborsClassifier
+SVC
+MultinomialNB
+classification_report
+Pipeline
+FunctionTransformer
+base64
