@@ -2,11 +2,6 @@ import streamlit as st
 import joblib
 import re
 import spacy
-from langdetect import detect
-from indic_transliteration import sanscript
-from indic_transliteration.sanscript import transliterate
-from deep_translator import GoogleTranslator
-from sklearn.base import BaseEstimator, TransformerMixin
 
 # Load spaCy model once
 nlp = spacy.load("en_core_web_sm")
