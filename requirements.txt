@@ -1,13 +1,12 @@
-streamlit
-scikit-learn
-joblib
-pandas
-numpy
+streamlit==1.29.0
+scikit-learn==1.3.2
+joblib==1.3.2
+pandas==1.5.3
+numpy==1.23.5
 langdetect
-deep_translator
+deep_translator==1.11.4
 indic_transliteration
-re
-spacy
+spacy==3.7.2
 TfidfVectorizer
 LogisticRegression
 RandomForestClassifier
@@ -20,3 +19,4 @@ classification_report
 Pipeline
 FunctionTransformer
 base64
+
