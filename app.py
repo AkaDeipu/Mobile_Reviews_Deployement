@@ -3,32 +3,8 @@ import joblib
 import re
 import spacy
 from text_preprocessor import TextPreprocessor
-import base64
 # Load the trained pipeline
 pipeline = joblib.load('clf_pipe.pkl')
-
-# Custom CSS for animated background 
-def set_background():
-    st.markdown("""
-        <style>
-        body {
-            background: linear-gradient(-45deg, #ffecd2, #fcb69f, #ff9a9e, #fad0c4);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-        }
-        @keyframes gradient {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
-        .mobile-img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 120px;
-        }
-        </style>
-    """, unsafe_allow_html=True)
 
 # Emoji map
 sentiment_emojis = {
@@ -38,7 +14,6 @@ sentiment_emojis = {
 }
 
 # Streamlit interface
-set_background()
 st.title("Mobile Review Sentiment Analyzer")
 st.write("Enter your mobile product review below:")
 
