@@ -1,9 +1,5 @@
-streamlit==1.29.0
-scikit-learn==1.3.2
-numpy==1.26.1
-joblib==1.3.2
-pandas==2.1.4
-langdetect
-deep-translator==1.11.4
-indic-transliteration
-spacy==3.7.2
+streamlit
+scikit-learn
+numpy
+spacy
+
