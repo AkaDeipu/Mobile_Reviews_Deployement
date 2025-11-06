@@ -36,10 +36,10 @@ def set_background():
     """, unsafe_allow_html=True)
 
 # Display mobile image
-def show_mobile_image():
-    with open("mobile.png", "rb") as img_file:
-        b64_img = base64.b64encode(img_file.read()).decode()
-        st.markdown(f'<img src="data:image/png;base64,{b64_img}" class="mobile-img">', unsafe_allow_html=True)
+#def show_mobile_image():
+    #with open("mobile.png", "rb") as img_file:
+        #b64_img = base64.b64encode(img_file.read()).decode()
+        #st.markdown(f'<img src="data:image/png;base64,{b64_img}" class="mobile-img">', unsafe_allow_html=True)
 
 # Emoji map
 sentiment_emojis = {
@@ -49,9 +49,9 @@ sentiment_emojis = {
 }
 
 # App layout
-set_background()
+#set_background()
 st.title("📱 Mobile Review Sentiment Analyzer")
-show_mobile_image()
+#show_mobile_image()
 st.markdown("### Enter your mobile product review below:")
 
 review = st.text_area("✍️ Your Review", height=150)
