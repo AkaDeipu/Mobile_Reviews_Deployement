@@ -7,16 +7,3 @@ langdetect
 deep_translator==1.11.4
 indic_transliteration
 spacy==3.7.2
-TfidfVectorizer
-LogisticRegression
-RandomForestClassifier
-StackingClassifier
-DecisionTreeClassifier
-NeighborsClassifier
-SVC
-MultinomialNB
-classification_report
-Pipeline
-FunctionTransformer
-base64
-
