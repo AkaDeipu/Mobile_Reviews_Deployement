@@ -25,7 +25,7 @@ if st.button("Analyze Sentiment"):
         prediction = proba.argmax()
         sentiment_map = {0: "Negative", 1: "Neutral", 2: "Positive"}
         st.write(f"Predicted Sentiment: {sentiment_map.get(prediction, 'Unknown')}")
-        st.markdown(f"## Sentiment: {sentiment_emojis.get(prediction, 'Unknown')}")
+        #st.markdown(f"## Predicted Sentiment: {sentiment_emojis.get(prediction, 'Unknown')}")
         st.write(f"Confidence Scores:")
         st.write({
             "Negative": round(proba[0], 3),
