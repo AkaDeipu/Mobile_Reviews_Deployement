@@ -2,4 +2,7 @@ streamlit
 scikit-learn
 numpy
 spacy
+langdetect
+deep_translator
+indic_transliteration
 
