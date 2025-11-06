@@ -1,11 +1,10 @@
 streamlit
 scikit-learn
-import joblib
-pandas as pd
-numpy as np
+joblib
+pandas
+numpy
 langdetect
 deep_translator
-indic_transliteration i
 indic_transliteration
 re
 spacy
