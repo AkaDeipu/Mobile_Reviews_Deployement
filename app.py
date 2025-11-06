@@ -27,9 +27,9 @@ if st.button("Analyze Sentiment"):
         #st.write(f"Predicted Sentiment: {sentiment_map.get(prediction, 'Unknown')}")
         st.markdown(f"## Predicted Sentiment: {sentiment_emojis.get(prediction, 'Unknown')}")
         st.write(f"##Confidence Scores:")
-        st.write(f"{##
-            "Negative": round(proba[0], 3)}
-            {"Neutral": round(proba[1], 3)},
-            {"Positive": round(proba[2], 3)}")
+        st.write({
+            "Negative": round(proba[0], 3)
+            "Neutral": round(proba[1], 3),
+            "Positive": round(proba[2], 3)})
     else:
         st.warning("Please enter a review to analyze.")
