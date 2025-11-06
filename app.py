@@ -1,6 +1,6 @@
 import streamlit as st
 import joblib
-
+from my_module import MyTransformer
 # Load the trained pipeline
 pipeline = joblib.load('clf_pipe.pkl')
 
