@@ -3,17 +3,17 @@ import joblib
 import re
 import spacy
 from text_preprocessor import TextPreprocessor
-# Load the trained pipeline
+#importing the pipeline for the new review analysis
 pipeline = joblib.load('clf_pipe.pkl')
 
-# Emoji map
+# Emoji map for the output
 sentiment_emojis = {
     0: "😠 Negative",
     1: "😐 Neutral",
     2: "😊 Positive"
 }
 
-# Streamlit interface
+# Creating a simple interface for better visualization
 st.title("Mobile Review Sentiment Analyzer")
 st.write("Enter your mobile product review below:")
 
