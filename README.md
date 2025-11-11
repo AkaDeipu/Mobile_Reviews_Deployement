@@ -1,10 +1,10 @@
-# 📱 Mobile Reviews Sentiment Analyzer
+# Mobile Reviews Sentiment Analyzer
 
 This project analyzes mobile product reviews and predicts sentiment using a trained ML pipeline. The app is built with Streamlit and features emoji-based sentiment display, a mobile-themed interface, and animated background.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Emoji-based sentiment output (😊 Neutral 😐 Negative 😠)
 - Mobile-themed design with image and animation
@@ -13,7 +13,7 @@ This project analyzes mobile product reviews and predicts sentiment using a trai
 
 ---
 
-## 🧠 Model Pipeline
+## Model Pipeline
 
 The pipeline includes:
 
@@ -25,7 +25,7 @@ Serialized as `clf_pipe.pkl` using `joblib`.
 
 ---
 
-## 🛠 Installation (Local)
+## Installation (Local)
 
 ```bash
 git clone https://github.com/akadeipu/mobile_reviews_deployement.git
