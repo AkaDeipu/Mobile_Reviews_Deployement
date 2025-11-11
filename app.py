@@ -4,6 +4,7 @@ import re
 import spacy
 from text_preprocessor import TextPreprocessor
 #importing the pipeline for the new review analysis
+#My pipeline has the text translation, text preprocessing, vectorizer, model
 pipeline = joblib.load('clf_pipe.pkl')
 
 # Emoji map for the output
