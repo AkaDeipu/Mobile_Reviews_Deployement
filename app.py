@@ -4,6 +4,8 @@ import joblib
 import re
 import spacy
 from text_preprocessor import TextPreprocessor
+from nltk.corpus import opinion_lexicon
+from nltk.tokenize import word_tokenize
 #importing the pipeline for the new review analysis
 #My pipeline has the text translation, text preprocessing, vectorizer, model
 pipeline = joblib.load('clf_pipe.pkl')
@@ -40,6 +42,16 @@ if st.button("Analyze Sentiment"):
             "Probability": proba
         })
         st.bar_chart(proba_df.set_index("Sentiment"))
+
+        tokens = word_tokenize(review.lower())
+        positive_words = [w for w in tokens if w in opinion_lexicon.positive()]
+        negative_words = [w for w in tokens if w in opinion_lexicon.negative()]
+        neutral_words = [w for w in tokens if w not in opinion_lexicon.positive() and w not in opinion_lexicon.negative()]
+
+        st.subheader("Words by Sentiment")
+        st.write("**Positive Words:**", ", ".join(positive_words) if positive_words else "None")
+        st.write("**Negative Words:**", ", ".join(negative_words) if negative_words else "None")
+        st.write("**Neutral Words:**", ", ".join(neutral_words) if neutral_words else "None")
 
     else:
         st.warning("Please enter a review to analyze.")
