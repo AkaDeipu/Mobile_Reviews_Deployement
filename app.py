@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 import re
 import spacy
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_trf")
 from text_preprocessor import TextPreprocessor
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
@@ -19,10 +19,9 @@ sentiment_emojis = {
 }
 
 # Creating a simple interface for better visualization
-st.title("Mobile Review Sentiment Analyzer")
-st.write("Enter your mobile product review below:")
-
-review = st.text_area("Review", height=150)
+st.sidebar.title("Mobile Review Sentiment Analyzer")
+review = st.sidebar.text_area("Enter your mobile product review:", height=150)
+analyze = st.sidebar.button("Analyze Sentiment")
 
 if st.button("Analyze Sentiment"):
     if review.strip():
@@ -61,7 +60,7 @@ if st.button("Analyze Sentiment"):
         st.subheader("Words by Sentiment")
         st.write("**Positive Words:**", ", ".join(positive_words) if positive_words else "None")
         st.write("**Negative Words:**", ", ".join(negative_words) if negative_words else "None")
-        st.write("**Neutral Words:**", ", ".join(neutral_words) if neutral_words else "None")
+        #st.write("**Neutral Words:**", ", ".join(neutral_words) if neutral_words else "None")
 
     else:
         st.warning("Please enter a review to analyze.")
