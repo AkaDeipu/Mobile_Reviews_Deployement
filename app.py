@@ -19,13 +19,13 @@ sentiment_emojis = {
 }
 
 # Creating a simple interface for better visualization
-#st.sidebar.title("Mobile Review Sentiment Analyzer")
-#review = st.sidebar.text_area("Enter your mobile product review:", height=150)
-#analyze = st.sidebar.button("Analyze Sentiment")
+st.sidebar.title("Mobile Review Sentiment Analyzer")
+review = st.sidebar.text_area("Enter your mobile product review:", height=150)
+analyze = st.sidebar.button("Analyze Sentiment")
 
-st.title("Mobile Review Sentiment Analyzer")
-st.markdown("### Enter your mobile product review below:")
-review = st.text_area("✍️ Your Review", height=150)
+#st.title("Mobile Review Sentiment Analyzer")
+#st.markdown("### Enter your mobile product review below:")
+#review = st.text_area("✍️ Your Review", height=150)
 
 if st.button("Analyze Sentiment"):
     if review.strip():
