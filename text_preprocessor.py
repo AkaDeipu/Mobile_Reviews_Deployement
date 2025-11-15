@@ -10,6 +10,11 @@ from sklearn.base import BaseEstimator, TransformerMixin
 
 nlp = spacy.load("en_core_web_sm")
 
+negations = {"no", "not", "nor", "never", "nothing", "none", "n’t"}
+for word in negations:
+    if word in nlp.Defaults.stop_words:
+        nlp.Defaults.stop_words.remove(word)
+
 class TextPreprocessor(BaseEstimator, TransformerMixin):
     def fit(self, X, y=None):
         return self
