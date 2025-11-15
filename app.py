@@ -50,8 +50,6 @@ if st.button("Analyze Sentiment"):
             nltk.download("vader_lexicon")
 
         sia = SentimentIntensityAnalyzer()
-
-        tokens = word_tokenize(review.lower())
         doc = nlp(review.lower())
         tokens = [token.lemma_ for token in doc if not token.is_stop and not token.is_punct and not token.is_space]
 
