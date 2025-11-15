@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 import joblib
 import re
 import spacy
@@ -27,10 +28,18 @@ if st.button("Analyze Sentiment"):
         sentiment_map = {0: "Negative", 1: "Neutral", 2: "Positive"}
         #st.write(f"Predicted Sentiment: {sentiment_map.get(prediction, 'Unknown')}")
         st.markdown(f"## Predicted Sentiment: {sentiment_emojis.get(prediction, 'Unknown')}")
-        st.write(f"## Confidence Scores:")
-        st.write({
-            "Negative": round(proba[0], 3),
-            "Neutral": round(proba[1], 3),
-            "Positive": round(proba[2], 3)})
+        #st.write(f"## Confidence Scores:")
+        #st.write({
+            #"Negative": round(proba[0], 3),
+            #"Neutral": round(proba[1], 3),
+            #"Positive": round(proba[2], 3)})
+
+        st.subheader("Confidence Scores")
+        proba_df = pd.DataFrame({
+            "Sentiment": ["Negative", "Neutral", "Positive"],
+            "Probability": proba
+        })
+        st.bar_chart(proba_df.set_index("Sentiment"))
+
     else:
         st.warning("Please enter a review to analyze.")
