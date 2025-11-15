@@ -6,6 +6,7 @@ import spacy
 from text_preprocessor import TextPreprocessor
 from nltk.corpus import opinion_lexicon
 from nltk.tokenize import word_tokenize
+nltk.download("opinion_lexicon")
 #importing the pipeline for the new review analysis
 #My pipeline has the text translation, text preprocessing, vectorizer, model
 pipeline = joblib.load('clf_pipe.pkl')
