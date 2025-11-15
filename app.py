@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 import re
 import spacy
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm-3.8.0")
 from text_preprocessor import TextPreprocessor
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
