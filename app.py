@@ -64,7 +64,7 @@ if analyze:
         st.subheader("Words by Sentiment")
         st.write("**Positive Words:**", ", ".join(positive_words) if positive_words else "None")
         st.write("**Negative Words:**", ", ".join(negative_words) if negative_words else "None")
-        #st.write("**Neutral Words:**", ", ".join(neutral_words) if neutral_words else "None")
+        st.write("**Neutral Words:**", ", ".join(neutral_words) if neutral_words else "None")
 
     else:
         st.warning("Please enter a review to analyze.")
