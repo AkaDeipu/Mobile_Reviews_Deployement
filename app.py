@@ -25,7 +25,6 @@ sentiment_emojis = {
 
 st.title("Mobile Review Sentiment Analyzer")
 st.markdown("### Enter your mobile product review below:")
-
 review = st.text_area("✍️ Your Review", height=150)
 
 if st.button("Analyze Sentiment"):
