@@ -19,7 +19,8 @@ sentiment_emojis = {
 }
 
 # Creating a simple interface for better visualization
-st.sidebar.title("Mobile Review Sentiment Analyzer")
+st.title("Mobile Review Sentiment Analyzer")
+st.sidebar.title("Sentiment Analyzer")
 review = st.sidebar.text_area("Enter your mobile product review:", height=200, width=350)
 analyze = st.sidebar.button("Analyze Sentiment")
 
