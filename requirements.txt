@@ -7,4 +7,5 @@ langdetect==1.0.9
 indic-transliteration==2.3.41
 deep-translator==1.11.4
 en_core_web_sm
+nltk==3.9.1
 
