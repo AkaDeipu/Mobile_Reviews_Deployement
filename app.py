@@ -4,8 +4,8 @@ import joblib
 import re
 import spacy
 from text_preprocessor import TextPreprocessor
-nlp = spacy.load("en_core_web_sm")
-
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 #importing the pipeline for the new review analysis
 #My pipeline has the text translation, text preprocessing, vectorizer, model
 pipeline = joblib.load('clf_pipe.pkl')
@@ -42,18 +42,22 @@ if st.button("Analyze Sentiment"):
             "Probability": proba
         })
         st.bar_chart(proba_df.set_index("Sentiment"))
+        
+        try:
+            nltk.data.find("sentiment/vader_lexicon.zip")
+        except LookupError:
+            nltk.download("vader_lexicon")
 
+        sia = SentimentIntensityAnalyzer()
+        
         doc = nlp(review.lower())
         tokens = [token.text for token in doc if not token.is_punct and not token.is_space]
 
+        positive_words = [w for w in tokens if sia.polarity_scores(w)["compound"] > 0]
+        negative_words = [w for w in tokens if sia.polarity_scores(w)["compound"] < 0]
+        neutral_words = [w for w in tokens if sia.polarity_scores(w)["compound"] == 0]
         
-        positive_words_list = ["good", "great", "excellent", "amazing", "love", "fantastic", "awesome", "wonderful"]
-        negative_words_list = ["bad", "poor", "terrible", "hate", "awful", "worst", "disappointing", "horrible"]
-
-        positive_words = [w for w in tokens if w in positive_words_list]
-        negative_words = [w for w in tokens if w in negative_words_list]
-        neutral_words = [w for w in tokens if w not in positive_words_list and w not in negative_words_list]
-
+                
         st.subheader("Words by Sentiment")
         st.write("**Positive Words:**", ", ".join(positive_words) if positive_words else "None")
         st.write("**Negative Words:**", ", ".join(negative_words) if negative_words else "None")
